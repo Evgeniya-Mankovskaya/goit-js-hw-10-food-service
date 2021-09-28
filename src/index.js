@@ -11,8 +11,8 @@ const Theme = {
 };
 
 themeSwitchToggle.addEventListener('change', e => {
-  document.querySelector('body').classList.toggle(Theme.DARK);
-  document.querySelector('body').classList.toggle(Theme.LIGHT);
+  document.body.classList.toggle(Theme.DARK);
+  document.body.classList.toggle(Theme.LIGHT);
   let theme = e.target.checked ? Theme.DARK : Theme.LIGHT;
   localStorage.setItem('theme', theme);
 });
@@ -23,5 +23,5 @@ if (!theme) {
   theme = Theme.LIGHT;
   localStorage.setItem('theme', theme);
 }
-document.querySelector('body').classList.add(theme);
+document.body.classList.add(theme);
 themeSwitchToggle.checked = theme === Theme.LIGHT ? false : true;
